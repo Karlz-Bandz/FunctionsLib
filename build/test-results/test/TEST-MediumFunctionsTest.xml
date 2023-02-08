@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="MediumFunctionsTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2023-02-08T10:14:07" hostname="LAPTOP-KMKOID83" time="0.021">
+<testsuite name="MediumFunctionsTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2023-02-08T11:34:32" hostname="LAPTOP-KMKOID83" time="0.018">
   <properties/>
-  <testcase name="TestMultiSquare()" classname="MediumFunctionsTest" time="0.021"/>
-  <system-out><![CDATA[123
-246
-369
+  <testcase name="TestMultiSquare()" classname="MediumFunctionsTest" time="0.017"/>
+  <testcase name="TestFindLargestPalindrome()" classname="MediumFunctionsTest" time="0.0"/>
+  <system-out><![CDATA[1   2   3   
+2   4   6   
+3   6   9   
 ]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

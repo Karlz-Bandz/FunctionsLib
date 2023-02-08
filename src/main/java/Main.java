@@ -5,7 +5,7 @@ public class Main {
         //Values
         int[] myArray = {10,23,2,1,4};
         int number = 10;
-        String word = "kaaakkaaak";
+        String word = "jesttshalkokkokll";
 
 
         //Assign an instance
@@ -16,6 +16,7 @@ public class Main {
         int sumSolution = functionsInstance.sumArrayMan();
         String numberIsEvenOrOdd = functionsInstance.checkIsEvenOrOdd(number);
         boolean isPalindrome = functionsInstance.isPalindrome(word);
+        String theBiggestPalindrome = functionsInstance.findLargestPalindrome(word);
 
 
         //Outputs
@@ -31,6 +32,15 @@ public class Main {
         //MultipleSquare
         System.out.println("MultipleSquare method of number " + number);
         functionsInstance.multipleSquare(number);
+        //Find The bigest palindrome method
+        System.out.println("Find The bigest palindrome method of word" + word);
+        System.out.println(theBiggestPalindrome);
+
+
+
+
+
+
 
 
 

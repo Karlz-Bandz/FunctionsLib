@@ -18,7 +18,27 @@ public class MediumFunctions extends BasicFunctions {
             }
             System.out.println();
         }
-
-
     }
+
+    public String findLargestPalindrome(String word){
+
+
+        int max_length = 0;
+        String largestPalindrome = "";
+
+        for(int i = 0; i < word.length(); i++){
+            for(int j = i+1; j < word.length(); j++){
+                String current = word.substring(i,j);
+                if(isPalindrome(current) && current.length() > max_length){
+                    max_length = current.length();
+                    largestPalindrome = current;
+                }
+
+            }
+        }
+
+        return largestPalindrome;
+    }
+
+
 }
