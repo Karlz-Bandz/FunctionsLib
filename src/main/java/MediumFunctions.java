@@ -1,4 +1,6 @@
-public class MediumFunctions extends BasicFunctions {
+import Interfaces.MediumInterface;
+
+public class MediumFunctions extends BasicFunctions implements MediumInterface {
     public MediumFunctions(int[] myArr) {
         super(myArr);
     }

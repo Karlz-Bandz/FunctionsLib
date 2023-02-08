@@ -1,8 +1,12 @@
-public class BasicFunctions {
+import Interfaces.BasicInterface;
+
+import java.util.Arrays;
+
+public class BasicFunctions implements BasicInterface {
 
    protected int[] myArr;
 
-
+   @Override
    public int sumArrayMan(){
        int sum = 0;
 
@@ -12,7 +16,18 @@ public class BasicFunctions {
        return sum;
    }
 
-   public String checkIsEvenOrOdd(int number){
+    @Override
+    public int findTheSeondLargest() {
+
+        Arrays.sort(myArr);
+
+        int solution = myArr[myArr.length - 2];
+
+        return solution;
+    }
+
+    @Override
+    public String checkIsEvenOrOdd(int number){
 
        if(number%2 == 0){
            return "Even";
@@ -20,7 +35,7 @@ public class BasicFunctions {
        else
            return "Odd";
    }
-
+   @Override
    public boolean isPalindrome(String word){
        StringBuilder buildNewWord = new StringBuilder();
 
