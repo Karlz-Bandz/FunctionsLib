@@ -16,5 +16,14 @@ public class MediumFunctionsTest {
         String actual = testMedium.findLargestPalindrome("karolo2");
         String expected = "olo";
         assert expected.equals(actual);
+        System.out.println(actual);
+    }
+
+    @Test
+    public void TestSumAllEvenNumbers(){
+        int testSum = testMedium.sumAllEvenNumbers(myArr);
+        int expected = 12;
+        assert expected == testSum;
+        System.out.println(testSum);
     }
 }

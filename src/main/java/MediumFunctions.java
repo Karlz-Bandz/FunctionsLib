@@ -5,7 +5,7 @@ public class MediumFunctions extends BasicFunctions implements MediumInterface {
         super(myArr);
     }
 
-
+    @Override
     public void multipleSquare(int number){
 
         for (int i = 1; i <= number; i++){
@@ -21,7 +21,7 @@ public class MediumFunctions extends BasicFunctions implements MediumInterface {
             System.out.println();
         }
     }
-
+    @Override
     public String findLargestPalindrome(String word){
 
 
@@ -40,6 +40,19 @@ public class MediumFunctions extends BasicFunctions implements MediumInterface {
         }
 
         return largestPalindrome;
+    }
+
+    @Override
+    public int sumAllEvenNumbers(int[] arr) {
+
+        int sum = 0;
+
+        for(int x: arr){
+            if(x%2 == 0){
+                sum+=x;
+            }
+        }
+        return sum;
     }
 
 

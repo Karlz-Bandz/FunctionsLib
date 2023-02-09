@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="MediumFunctionsTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2023-02-09T08:57:55" hostname="LAPTOP-KMKOID83" time="0.036">
+  <properties/>
+  <testcase name="TestMultiSquare()" classname="MediumFunctionsTest" time="0.032"/>
+  <testcase name="TestFindLargestPalindrome()" classname="MediumFunctionsTest" time="0.001"/>
+  <testcase name="TestSumAllEvenNumbers()" classname="MediumFunctionsTest" time="0.001"/>
+  <system-out><![CDATA[1   2   3   
+2   4   6   
+3   6   9   
+olo
+12
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

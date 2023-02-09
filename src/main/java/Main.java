@@ -4,20 +4,29 @@ public class Main {
 
         //Values
         int[] myArray = {10,23,2,1,4};
-        int number = 10;
+        int number = 6;
         String word = "jesttshalkokkokll";
+        String word2 = "helo word!";
 
 
         //Assign an instance
-        MediumFunctions functionsInstance = new MediumFunctions(myArray);
+        HardFunctions functionsInstance = new HardFunctions(myArray);
 
 
         //Calling methods
         int sumSolution = functionsInstance.sumArrayMan();
+
         String numberIsEvenOrOdd = functionsInstance.checkIsEvenOrOdd(number);
+
         boolean isPalindrome = functionsInstance.isPalindrome(word);
+
         String theBiggestPalindrome = functionsInstance.findLargestPalindrome(word);
+
         int theSecondBiggest = functionsInstance.findTheSeondLargest();
+
+        int sumOfArrayEven = functionsInstance.sumAllEvenNumbers(myArray);
+
+        Character charSolution = functionsInstance.firstNonRepetedCharacter(word2);
 
 
         //Outputs
@@ -44,6 +53,14 @@ public class Main {
         //Find the second biggest number of array
         System.out.println("Find the second biggest number of array 10,23,1,2,4");
         System.out.println(theSecondBiggest);
+        System.out.println();
+        //Sum all even numbers from array
+        System.out.println("Sum all even numbers from array 10,23,1,2,4");
+        System.out.println(sumOfArrayEven);
+        System.out.println();
+        //Find first non repeted charcter method
+        System.out.println("Find first non repeted charcter method from word " + word2);
+        System.out.println(charSolution);
         System.out.println();
 
 
