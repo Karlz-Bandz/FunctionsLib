@@ -7,4 +7,6 @@ public interface MediumInterface {
     String findLargestPalindrome(String word);
 
     int sumAllEvenNumbers(int[] arr);
+
+    int[] targetNumbers(int[] arr, int target);
 }
