@@ -55,5 +55,32 @@ public class MediumFunctions extends BasicFunctions implements MediumInterface {
         return sum;
     }
 
+    @Override
+    public int[] targetNumbers(int[] arr, int target) {
+
+
+        int solution1 = 0;
+        int solution2 = 0;
+
+
+            for (int i = 0; i < arr.length; i++){
+
+                for(int j = i; j < arr.length; j++){
+                    if(arr[i] + arr[j] == target && arr[i] != arr[j]){
+                        solution1 = i;
+                        solution2 = j;
+                    }
+                }
+
+            }
+
+            int[] solutionArr = {solution1, solution2};
+
+
+
+
+        return solutionArr;
+    }
+
 
 }

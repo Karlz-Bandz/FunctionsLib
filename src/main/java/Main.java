@@ -7,6 +7,7 @@ public class Main {
         int number = 6;
         String word = "jesttshalkokkokll";
         String word2 = "helo word!";
+        int target = 14;
 
 
         //Assign an instance
@@ -23,6 +24,8 @@ public class Main {
         String theBiggestPalindrome = functionsInstance.findLargestPalindrome(word);
 
         int theSecondBiggest = functionsInstance.findTheSeondLargest();
+
+        int[] returnedArr = functionsInstance.targetNumbers(myArray, target);
 
         int sumOfArrayEven = functionsInstance.sumAllEvenNumbers(myArray);
 
@@ -62,6 +65,18 @@ public class Main {
         System.out.println("Find first non repeted charcter method from word " + word2);
         System.out.println(charSolution);
         System.out.println();
+        //Target Numbers method.
+        System.out.println("Target Numbers method. Return indexes of first and the second number\n  " +
+                "of array whose sum\n" +
+                "is the same like the provided target: " + target);
+        System.out.print("Array: ");
+        for (int x: myArray){
+            System.out.print(x + ", ");
+        }
+        System.out.println();
+        System.out.println("[" + returnedArr[0] + ", " + returnedArr[1] + "]");
+        System.out.println();
+
 
 
 

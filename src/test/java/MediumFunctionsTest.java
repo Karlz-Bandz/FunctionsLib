@@ -26,4 +26,16 @@ public class MediumFunctionsTest {
         assert expected == testSum;
         System.out.println(testSum);
     }
+
+    @Test
+    public void TestTargetNumbers(){
+        int[] arr = testMedium.targetNumbers(myArr, 8);
+
+        for(int x: arr){
+            System.out.println(x);
+        }
+
+        assert arr[0] == 1;
+        assert arr[1] == 4;
+    }
 }
