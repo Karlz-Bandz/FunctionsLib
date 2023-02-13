@@ -100,6 +100,10 @@ public class Main {
 
         System.out.println();
 
+        float number2 = 20;
+
+        System.out.println("Pole kwadratu o boku " + number2 + " wynosi: " + basicFunctions.squarePlace(number2));
+
 
 
 
