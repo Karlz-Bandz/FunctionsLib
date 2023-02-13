@@ -9,4 +9,6 @@ public interface MediumInterface {
     int sumAllEvenNumbers(int[] arr);
 
     int[] targetNumbers(int[] arr, int target);
+
+    int[] mergeWithNoDuplicates(int[] arr1, int[] arr2);
 }

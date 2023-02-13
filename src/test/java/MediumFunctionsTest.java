@@ -1,5 +1,7 @@
 import org.junit.jupiter.api.Test;
 
+import java.util.Arrays;
+
 
 public class MediumFunctionsTest {
 
@@ -37,5 +39,17 @@ public class MediumFunctionsTest {
 
         assert arr[0] == 1;
         assert arr[1] == 4;
+    }
+
+    @Test
+    public void TestMergeWithNoDuplicates(){
+        int[] testArr1 = {0,3,4,23,2};
+        int[] testArr2 = {0,4,22,23};
+
+        int[] expectedArr = {0, 2, 3, 4, 22, 23};
+
+        int[] testMethod = testMedium.mergeWithNoDuplicates(testArr1, testArr2);
+
+        assert Arrays.equals(testMethod, expectedArr);
     }
 }

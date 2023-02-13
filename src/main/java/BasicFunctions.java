@@ -52,6 +52,11 @@ public class BasicFunctions implements BasicInterface {
 
    }
 
+    @Override
+    public void polymorphismMethod() {
+        System.out.println("I'm a Basic class");
+    }
+
     public BasicFunctions(int[] myArr) {
         this.myArr = myArr;
     }

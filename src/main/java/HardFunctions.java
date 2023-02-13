@@ -27,4 +27,9 @@ public class HardFunctions extends MediumFunctions implements HardInterface {
         }
         return solution;
     }
+
+    @Override
+    public void polymorphismMethod() {
+        System.out.println("I'm a Hard class");
+    }
 }

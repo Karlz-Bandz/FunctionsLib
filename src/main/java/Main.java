@@ -77,6 +77,29 @@ public class Main {
         System.out.println("[" + returnedArr[0] + ", " + returnedArr[1] + "]");
         System.out.println();
 
+        //Polymorphism
+        System.out.println("Here is an example of the polymorphism");
+        BasicFunctions basicFunctions = new BasicFunctions(myArray);
+        MediumFunctions mediumFunctions = new MediumFunctions(myArray);
+        HardFunctions hardFunctions = new HardFunctions(myArray);
+
+        System.out.println();
+        System.out.print("1: ");
+
+        basicFunctions.polymorphismMethod();
+
+        System.out.println();
+        System.out.print("2: ");
+
+        mediumFunctions.polymorphismMethod();
+
+        System.out.println();
+        System.out.print("3: ");
+
+        hardFunctions.polymorphismMethod();
+
+        System.out.println();
+
 
 
 

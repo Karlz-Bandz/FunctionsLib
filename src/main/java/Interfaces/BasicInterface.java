@@ -9,4 +9,6 @@ public interface BasicInterface {
      String checkIsEvenOrOdd(int number);
 
      boolean isPalindrome(String word);
+
+     void polymorphismMethod();
 }

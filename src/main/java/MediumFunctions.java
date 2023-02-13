@@ -1,5 +1,7 @@
 import Interfaces.MediumInterface;
 
+import java.util.*;
+
 public class MediumFunctions extends BasicFunctions implements MediumInterface {
     public MediumFunctions(int[] myArr) {
         super(myArr);
@@ -80,6 +82,40 @@ public class MediumFunctions extends BasicFunctions implements MediumInterface {
 
 
         return solutionArr;
+    }
+
+    @Override
+    public int[] mergeWithNoDuplicates(int[] arr1, int[] arr2) {
+
+        List<Integer> solutionList = new ArrayList<>();
+
+        for(int x: arr1){
+            solutionList.add(x);
+        }
+        for(int x: arr2){
+            solutionList.add(x);
+        }
+
+       Set<Integer> solutionSet = new HashSet<>(solutionList);
+        solutionList.clear();
+        solutionList.addAll(solutionSet);
+
+        Collections.sort(solutionList);
+
+        int[] solutionArr = new int[solutionList.size()];
+
+        for(int i = 0; i < solutionList.size(); i++){
+            solutionArr[i] = solutionList.get(i);
+        }
+
+
+
+        return solutionArr;
+    }
+
+    @Override
+    public void polymorphismMethod() {
+        System.out.println("I'm a Medium class");
     }
 
 

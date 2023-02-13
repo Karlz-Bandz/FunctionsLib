@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="BasicFunctionsTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2023-02-10T17:56:31" hostname="WPLKM250542-F0V" time="0.023">
+<testsuite name="BasicFunctionsTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2023-02-11T18:12:15" hostname="WPLKM250542-F0V" time="0.018">
   <properties/>
-  <testcase name="findTheSecondLargestTest()" classname="BasicFunctionsTest" time="0.023"/>
+  <testcase name="findTheSecondLargestTest()" classname="BasicFunctionsTest" time="0.018"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>
