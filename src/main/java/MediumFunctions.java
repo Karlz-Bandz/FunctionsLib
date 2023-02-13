@@ -113,5 +113,10 @@ public class MediumFunctions extends BasicFunctions implements MediumInterface {
         return solutionArr;
     }
 
+    @Override
+    public void polymorphismMethod() {
+        System.out.println("I'm a Medium class");
+    }
+
 
 }
