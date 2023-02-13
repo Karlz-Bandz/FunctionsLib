@@ -57,6 +57,11 @@ public class BasicFunctions implements BasicInterface {
         System.out.println("I'm a Basic class");
     }
 
+    @Override
+    public float squarePlace(float a) {
+       return a*a;
+    }
+
     public BasicFunctions(int[] myArr) {
         this.myArr = myArr;
     }

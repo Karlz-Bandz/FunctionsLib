@@ -8,6 +8,22 @@ public class HardFunctionsTest {
     HardFunctions hardFunctionsTest = new HardFunctions(myArr);
 
     @Test
+    public void setCornerOfTheTImerTest(){
+        double solution = hardFunctionsTest.setCornerOfTheTimer(12,16);
+
+        System.out.println(solution);
+    }
+
+    @Test
+    public void quickSortTest(){
+        int[] solution = hardFunctionsTest.quickSort(myArr, 1, 1);
+
+        for(int x: solution){
+            System.out.print(x + ", ");
+        }
+    }
+
+    @Test
     public void firstNonRepetedCharacterTest(){
         Character solutionTest = hardFunctionsTest.firstNonRepetedCharacter("hello");
         Character solutionTest2 = hardFunctionsTest.firstNonRepetedCharacter("helo word!");

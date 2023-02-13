@@ -11,4 +11,6 @@ public interface BasicInterface {
      boolean isPalindrome(String word);
 
      void polymorphismMethod();
+
+     float squarePlace(float a);
 }
