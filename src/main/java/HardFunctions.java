@@ -79,8 +79,8 @@ public class HardFunctions extends MediumFunctions implements HardInterface {
 
         }
 
-        basicSort(arrSecondSort1, arrSecondSort1.length);
-        basicSort(arrSecondSort2, arrSecondSort2.length);
+        basicSort(arrSecondSort1);
+        basicSort(arrSecondSort2);
 
         int[] solution = new int[arrSecondSort1.length + arrSecondSort2.length];
 

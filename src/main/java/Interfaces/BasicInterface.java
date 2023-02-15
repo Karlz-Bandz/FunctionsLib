@@ -12,7 +12,7 @@ public interface BasicInterface {
 
      void polymorphismMethod();
 
-     public int[] basicSort(int[] arr, int n);
+     int[] basicSort(int[] arr);
 
      float squarePlace(float a);
 }

@@ -63,25 +63,20 @@ public class BasicFunctions implements BasicInterface {
     }
 
     @Override
-    public int[] basicSort(int[] arr, int n) {
+    public int[] basicSort(int[] arr) {
 
-        if (n == 1)
-        {
-            return arr;
-        }else{
-            for (int i=0; i<n-1; i++)
-        {
-            if (arr[i] > arr[i+1])
-            {
-                int temp = arr[i];
-                arr[i] = arr[i+1];
-                arr[i+1] = temp;
-            }
-        }
-
-        basicSort(arr, n-1);
-        }
-        return arr;
+      for(int j = 0; j<arr.length; j++){
+          for (int i=0; i<arr.length-1; i++)
+          {
+              if (arr[i] > arr[i+1])
+              {
+                  int temp = arr[i];
+                  arr[i] = arr[i+1];
+                  arr[i+1] = temp;
+              }
+          }
+      }
+      return arr;
     }
 
 
