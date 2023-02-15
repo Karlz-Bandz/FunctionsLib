@@ -1,5 +1,8 @@
 import Interfaces.HardInterface;
 
+import java.util.Arrays;
+import java.util.stream.Stream;
+
 public class HardFunctions extends MediumFunctions implements HardInterface {
 
     public HardFunctions(int[] myArr) {
@@ -29,7 +32,9 @@ public class HardFunctions extends MediumFunctions implements HardInterface {
     }
 
     @Override
-    public int[] quickSort(int[] arr, int START, int n) {
+    public int[] quickSort(int[] arr) {
+
+        int n = arr[0];
 
         for(int i = 0; i < arr.length; i++){
             if(arr[i] == n){
@@ -40,10 +45,60 @@ public class HardFunctions extends MediumFunctions implements HardInterface {
             }
         }
 
+        int pointer = 0;
+
+        for(int i = 0; i < arr.length - 1; i++){
+            if(arr[i] < arr[arr.length - 1]){
+                int y = arr[i];
+                int z = arr[pointer];
+
+                arr[i] = z;
+                arr[pointer] = y;
+                pointer++;
+            }
+        }
+
+        int pivot = arr[arr.length - 1];
+        int changeNumber = arr[pointer];
+
+        arr[pointer] = pivot;
+        arr[arr.length - 1] = changeNumber;
+
+        int[] arrSecondSort1 = new int[pointer];
+        int[] arrSecondSort2 = new int[arr.length-pointer];
+
+        for(int i = 0; i < arrSecondSort1.length; i++){
+            arrSecondSort1[i] = arr[i];
+        }
 
 
-        return arr;
+
+        for(int i = 0; i < arrSecondSort2.length; i++){
+            arrSecondSort2[i] = arr[pointer];
+            pointer++;
+
+        }
+
+        basicSort(arrSecondSort1, arrSecondSort1.length);
+        basicSort(arrSecondSort2, arrSecondSort2.length);
+
+        int[] solution = new int[arrSecondSort1.length + arrSecondSort2.length];
+
+        int position = 0;
+
+        for(int x: arrSecondSort1){
+            solution[position] = x;
+            position++;
+        }
+        for(int x: arrSecondSort2){
+            solution[position] = x;
+            position++;
+        }
+
+
+        return solution;
     }
+
 
     @Override
     public double setCornerOfTheTimer(double hour, double minutes) {

@@ -80,8 +80,8 @@ public class Main {
         //Polymorphism
         System.out.println("Here is an example of the polymorphism");
         BasicFunctions basicFunctions = new BasicFunctions(myArray);
-        MediumFunctions mediumFunctions = new MediumFunctions(myArray);
-        HardFunctions hardFunctions = new HardFunctions(myArray);
+        BasicFunctions mediumFunctions = new MediumFunctions(myArray);
+        BasicFunctions hardFunctions = new HardFunctions(myArray);
 
         System.out.println();
         System.out.print("1: ");
