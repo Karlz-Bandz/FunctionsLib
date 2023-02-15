@@ -8,6 +8,8 @@ public class HardFunctionsTest {
     private int[] myArr = {6,1,8,4,5,2,7,3,9,22,34,11,10,99,14,20,21,34,55,17};
     private int[] myArr2 = {1,4,5,2,3};
 
+
+
     HardFunctions hardFunctionsTest = new HardFunctions(myArr);
 
     @Test
