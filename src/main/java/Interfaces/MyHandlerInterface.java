@@ -14,4 +14,6 @@ public interface MyHandlerInterface {
     void handleSecondEndpoint(HttpExchange exchange) throws IOException;
     //Display the sorted numbers
     void handleQuickSort(HttpExchange exchange) throws IOException;
+    //Display List of students
+    void diplayListOfStudents(HttpExchange exchange) throws IOException;
 }

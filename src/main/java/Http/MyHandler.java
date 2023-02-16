@@ -1,18 +1,22 @@
 package Http;
 
 import Interfaces.MyHandlerInterface;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.sun.net.httpserver.Headers;
 import com.sun.net.httpserver.HttpExchange;
 import com.sun.net.httpserver.HttpHandler;
 import functions.BasicFunctions;
 import functions.HardFunctions;
 import functions.MediumFunctions;
+import models.Student;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
 import java.io.IOException;
 import java.io.OutputStream;
 import java.nio.charset.StandardCharsets;
+import java.util.ArrayList;
+import java.util.List;
 
 
 public class MyHandler implements HttpHandler, MyHandlerInterface {
@@ -40,6 +44,9 @@ public class MyHandler implements HttpHandler, MyHandlerInterface {
                 break;
             case "/api/quicksort":
                 handleQuickSort(exchange);
+                break;
+            case "/api/show/students":
+                diplayListOfStudents(exchange);
                 break;
             default:
                 exchange.sendResponseHeaders(404, -1);
@@ -113,6 +120,31 @@ public class MyHandler implements HttpHandler, MyHandlerInterface {
         outputStream.write(json.toString().getBytes());
         outputStream.close();
 
+    }
+
+    @Override
+    public void diplayListOfStudents(HttpExchange exchange) throws IOException {
+        int[] studentMarks = {1,5,3,2,6};
+
+        int[] sorted = hardFunctions.quickSort(studentMarks);
+
+        Student student1 = new Student(1, "Karol", studentMarks);
+        Student student2 = new Student(2, "Kamil", sorted);
+
+        List<Student> students = new ArrayList<>();
+
+        students.add(student1);
+        students.add(student2);
+
+        ObjectMapper objectMapper = new ObjectMapper();
+        String json = objectMapper.writeValueAsString(students);
+
+        exchange.getResponseHeaders().set("Content-Type", "application/json");
+        exchange.sendResponseHeaders(200, json.length());
+
+        OutputStream outputStream = exchange.getResponseBody();
+        outputStream.write(json.getBytes());
+        outputStream.close();
     }
 }
 
