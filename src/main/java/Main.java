@@ -1,6 +1,32 @@
-public class Main {
+import com.sun.net.httpserver.HttpHandler;
+import com.sun.net.httpserver.HttpServer;
 
-    public static void main(String[] args) {
+import java.io.IOException;
+import java.net.InetSocketAddress;
+
+
+public class   Main {
+
+
+
+
+    public static void main(String[] args) throws IOException {
+
+        HttpServer server = HttpServer.create(new InetSocketAddress(8080), 0);
+
+        HttpHandler endpoint1 = new MyHandler();
+        HttpHandler endpoint2 = new MyHandler();
+
+        server.createContext("/api/1", endpoint1);
+        server.createContext("/api/2", endpoint2);
+
+
+
+
+
+        server.start();
+
+
 
         //Values
         int[] myArray = {10,23,2,1,4};
@@ -103,21 +129,6 @@ public class Main {
         float number2 = 20;
 
         System.out.println("Pole kwadratu o boku " + number2 + " wynosi: " + basicFunctions.squarePlace(number2));
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
     }
 }

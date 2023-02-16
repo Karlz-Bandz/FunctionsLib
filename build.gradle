@@ -10,12 +10,15 @@ repositories {
 }
 
 dependencies {
+    implementation 'org.jetbrains:annotations:20.1.0'
     testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.1'
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.1'
     // https://mvnrepository.com/artifact/junit/junit
     testImplementation 'junit:junit:4.13.2'
-
-
+    // https://mvnrepository.com/artifact/javax/javaee-api
+    compileOnly group: 'javax', name: 'javaee-api', version: '8.0'
+    // https://mvnrepository.com/artifact/org.json/json
+    implementation 'org.json:json:20210307'
 }
 
 test {

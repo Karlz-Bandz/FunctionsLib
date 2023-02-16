@@ -4,7 +4,8 @@ import java.util.Random;
 
 
 public class HardFunctionsTest {
-    int size = 20500;
+
+    int size = 50000;
 
     private int[] myArr = {6,1,8,4,5,2,7,3,9,22,34,11,10,99,14,20,21,34,55,17};
     private int[] myArr2 = {1,4,5,2,3};
@@ -28,6 +29,7 @@ public class HardFunctionsTest {
     public void SortProcedureTest(){
 
 
+
         int[] longTestArr = new int[size];
 
         for(int i = 0; i < size; i++){
@@ -36,16 +38,16 @@ public class HardFunctionsTest {
 
         System.out.println("Basic");
         long start = System.currentTimeMillis();
-        int[] solutionTest = hardFunctionsTest.basicSort(longTestArr, longTestArr.length);
+        int[] solutionTest = hardFunctionsTest.basicSort(longTestArr);
         long time = System.currentTimeMillis() - start;
         System.out.println(time);
 
         System.out.println();
 
-        for(int x: solutionTest){
-            System.out.print(x + ", ");
-        }
-        System.out.println();
+//        for(int x: solutionTest){
+//            System.out.print(x + ", ");
+//        }
+//        System.out.println();
     }
 
     @Test
@@ -65,9 +67,9 @@ public class HardFunctionsTest {
 
         System.out.println(time);
 
-        for(int x: solution){
-            System.out.print(x + ", ");
-        }
+//        for(int x: solution){
+//            System.out.print(x + ", ");
+//        }
     }
 
     @Test

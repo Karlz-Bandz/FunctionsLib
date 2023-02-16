@@ -10,9 +10,9 @@ public interface BasicInterface {
 
      boolean isPalindrome(String word);
 
-     void polymorphismMethod();
+     String polymorphismMethod();
 
-     public int[] basicSort(int[] arr, int n);
+     int[] basicSort(int[] arr);
 
      float squarePlace(float a);
 }
