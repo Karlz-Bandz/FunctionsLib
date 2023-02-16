@@ -7,6 +7,7 @@ import com.sun.net.httpserver.HttpHandler;
 import functions.BasicFunctions;
 import functions.HardFunctions;
 import functions.MediumFunctions;
+import org.json.JSONArray;
 import org.json.JSONObject;
 
 import java.io.IOException;
@@ -16,11 +17,13 @@ import java.nio.charset.StandardCharsets;
 
 public class MyHandler implements HttpHandler, MyHandlerInterface {
 
-    int[] myArray = {2,4,5,6,7};
+    int[] myArray = {2,56,1,9,4,6,3,2,55,64,23,44,11,22,87,56,4,5,6,7};
 
 
-    BasicFunctions hardFunctions = new HardFunctions(myArray);
+    HardFunctions hardFunctions = new HardFunctions(myArray);
     BasicFunctions medium = new MediumFunctions(myArray);
+
+
 
 
     @Override
@@ -34,6 +37,9 @@ public class MyHandler implements HttpHandler, MyHandlerInterface {
                 break;
             case "/api/2":
                 handleSecondEndpoint(exchange);
+                break;
+            case "/api/quicksort":
+                handleQuickSort(exchange);
                 break;
             default:
                 exchange.sendResponseHeaders(404, -1);
@@ -80,6 +86,32 @@ public class MyHandler implements HttpHandler, MyHandlerInterface {
         OutputStream os = exchange.getResponseBody();
         os.write(responseJson.toString().getBytes(StandardCharsets.UTF_8));
         os.close();
+
+    }
+
+    @Override
+    public void handleQuickSort(HttpExchange exchange) throws IOException {
+
+        int[] sortedArray = hardFunctions.quickSort(myArray);
+        String separator = "\n";
+
+        JSONArray jsonArrayBefore = new JSONArray(myArray);
+        JSONObject jsonBefore = new JSONObject();
+        jsonBefore.put("before", jsonArrayBefore);
+
+        JSONArray jsonArray = new JSONArray(sortedArray);
+        JSONObject json = new JSONObject();
+        json.put("after", jsonArray);
+
+        exchange.getResponseHeaders().set("Content-Type", "application/json");
+        exchange.sendResponseHeaders(200, json.toString().length()
+                + jsonBefore.toString().length() + 1);
+
+        OutputStream outputStream = exchange.getResponseBody();
+        outputStream.write(jsonBefore.toString().getBytes());
+        outputStream.write(separator.getBytes());
+        outputStream.write(json.toString().getBytes());
+        outputStream.close();
 
     }
 }

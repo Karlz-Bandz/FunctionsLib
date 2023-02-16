@@ -12,8 +12,6 @@ public interface MyHandlerInterface {
     void handleFirstEndpoint(HttpExchange exchange) throws IOException;
     //Second test -> localhost:8080/api/2
     void handleSecondEndpoint(HttpExchange exchange) throws IOException;
-
-
-
-
+    //Display the sorted numbers
+    void handleQuickSort(HttpExchange exchange) throws IOException;
 }
