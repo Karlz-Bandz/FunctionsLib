@@ -1,5 +1,9 @@
+import Http.MyHandler;
 import com.sun.net.httpserver.HttpHandler;
 import com.sun.net.httpserver.HttpServer;
+import functions.BasicFunctions;
+import functions.HardFunctions;
+import functions.MediumFunctions;
 
 import java.io.IOException;
 import java.net.InetSocketAddress;
@@ -16,9 +20,13 @@ public class   Main {
 
         HttpHandler endpoint1 = new MyHandler();
         HttpHandler endpoint2 = new MyHandler();
+        HttpHandler endpoint3 = new MyHandler();
+        HttpHandler endpoint4 = new MyHandler();
 
         server.createContext("/api/1", endpoint1);
         server.createContext("/api/2", endpoint2);
+        server.createContext("/api/quicksort", endpoint3);
+        server.createContext("/api/show/students", endpoint4);
 
 
 

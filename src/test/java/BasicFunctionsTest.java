@@ -1,3 +1,4 @@
+import functions.BasicFunctions;
 import org.junit.jupiter.api.Test;
 
 public class BasicFunctionsTest {
