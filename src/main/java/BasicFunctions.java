@@ -1,4 +1,5 @@
 import Interfaces.BasicInterface;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.Arrays;
 
@@ -36,7 +37,7 @@ public class BasicFunctions implements BasicInterface {
            return "Odd";
    }
    @Override
-   public boolean isPalindrome(String word){
+   public boolean isPalindrome(@NotNull String word){
        StringBuilder buildNewWord = new StringBuilder();
 
        for(int i = word.length() - 1; i > -1; i--){
@@ -53,8 +54,8 @@ public class BasicFunctions implements BasicInterface {
    }
 
     @Override
-    public void polymorphismMethod() {
-        System.out.println("I'm a Basic class");
+    public String polymorphismMethod() {
+        return "I'm a Basic class";
     }
 
     @Override

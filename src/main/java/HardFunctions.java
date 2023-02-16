@@ -1,7 +1,5 @@
 import Interfaces.HardInterface;
 
-import java.util.Arrays;
-import java.util.stream.Stream;
 
 public class HardFunctions extends MediumFunctions implements HardInterface {
 
@@ -112,7 +110,7 @@ public class HardFunctions extends MediumFunctions implements HardInterface {
     }
 
     @Override
-    public void polymorphismMethod() {
-        System.out.println("I'm a Hard class");
+    public String polymorphismMethod() {
+        return "I'm a Hard class";
     }
 }

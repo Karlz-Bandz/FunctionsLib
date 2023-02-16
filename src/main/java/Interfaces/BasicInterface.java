@@ -10,7 +10,7 @@ public interface BasicInterface {
 
      boolean isPalindrome(String word);
 
-     void polymorphismMethod();
+     String polymorphismMethod();
 
      int[] basicSort(int[] arr);
 

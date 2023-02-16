@@ -10,10 +10,35 @@ repositories {
 }
 
 dependencies {
+    implementation 'org.jetbrains:annotations:20.1.0'
     testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.1'
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.1'
     // https://mvnrepository.com/artifact/junit/junit
     testImplementation 'junit:junit:4.13.2'
+    // https://mvnrepository.com/artifact/javax/javaee-api
+    compileOnly group: 'javax', name: 'javaee-api', version: '8.0'
+    // https://mvnrepository.com/artifact/org.json/json
+    implementation 'org.json:json:20210307'
+
+
+    // https://mvnrepository.com/artifact/org.apache.tomcat.embed/tomcat-embed-core
+//    implementation 'org.apache.tomcat.embed:tomcat-embed-core:10.1.5'
+//    // https://mvnrepository.com/artifact/org.apache.tomcat.embed/tomcat-embed-jasper
+//    implementation 'org.apache.tomcat.embed:tomcat-embed-jasper:10.1.5'
+//    // https://mvnrepository.com/artifact/org.apache.tomcat/tomcat-jasper
+//    implementation 'org.apache.tomcat:tomcat-jasper:10.1.5'
+//    // https://mvnrepository.com/artifact/org.apache.tomcat/tomcat-jasper-el
+//    implementation 'org.apache.tomcat:tomcat-jasper-el:10.1.5'
+//    // https://mvnrepository.com/artifact/org.apache.tomcat/tomcat-jsp-api
+//    implementation 'org.apache.tomcat:tomcat-jsp-api:10.1.5'
+
+
+
+
+
+
+
+
 
 
 }
