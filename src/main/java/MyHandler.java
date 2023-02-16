@@ -14,6 +14,7 @@ public class MyHandler implements HttpHandler {
 
 
     BasicFunctions hardFunctions = new HardFunctions(myArray);
+    BasicFunctions medium = new MediumFunctions(myArray);
 
 
     @Override
@@ -22,10 +23,10 @@ public class MyHandler implements HttpHandler {
         String requestURI = exchange.getRequestURI().getPath();
 
         switch (requestURI){
-            case "/first/hello":
+            case "/api/1":
                 handleFirstEndpoint(exchange);
                 break;
-            case "/first/drugi":
+            case "/api/2":
                 handleSecondEndpoint(exchange);
                 break;
             default:
@@ -38,12 +39,10 @@ public class MyHandler implements HttpHandler {
 
     private void handleFirstEndpoint(HttpExchange exchange) throws IOException {
 
-
-
-        String response = hardFunctions.polymorphismMethod();
+        String response = medium.polymorphismMethod();
         JSONObject responseJson = new JSONObject();
         responseJson.put("message", response);
-        responseJson.put("age", 2);
+        responseJson.put("age", 4);
 
 
         Headers responseHeaders = exchange.getResponseHeaders();
@@ -58,10 +57,12 @@ public class MyHandler implements HttpHandler {
     }
     private void handleSecondEndpoint(HttpExchange exchange) throws IOException {
 
-        String response = "Jestęm drugim endpointem";
+
+
+        String response = hardFunctions.polymorphismMethod();
         JSONObject responseJson = new JSONObject();
-        responseJson.put("erroror", response);
-        responseJson.put("?", 2);
+        responseJson.put("message", response);
+        responseJson.put("age", 2);
 
 
         Headers responseHeaders = exchange.getResponseHeaders();
