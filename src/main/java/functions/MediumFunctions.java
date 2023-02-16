@@ -1,3 +1,5 @@
+package functions;
+
 import Interfaces.MediumInterface;
 
 import java.util.*;

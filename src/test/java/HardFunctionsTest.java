@@ -1,3 +1,4 @@
+import functions.HardFunctions;
 import org.junit.jupiter.api.Test;
 
 import java.util.Random;

@@ -1,6 +1,12 @@
+package Http;
+
+import Interfaces.MyHandlerInterface;
 import com.sun.net.httpserver.Headers;
 import com.sun.net.httpserver.HttpExchange;
 import com.sun.net.httpserver.HttpHandler;
+import functions.BasicFunctions;
+import functions.HardFunctions;
+import functions.MediumFunctions;
 import org.json.JSONObject;
 
 import java.io.IOException;
@@ -8,7 +14,7 @@ import java.io.OutputStream;
 import java.nio.charset.StandardCharsets;
 
 
-public class MyHandler implements HttpHandler {
+public class MyHandler implements HttpHandler, MyHandlerInterface {
 
     int[] myArray = {2,4,5,6,7};
 
@@ -37,7 +43,8 @@ public class MyHandler implements HttpHandler {
 
     }
 
-    private void handleFirstEndpoint(HttpExchange exchange) throws IOException {
+    @Override
+    public void handleFirstEndpoint(HttpExchange exchange) throws IOException {
 
         String response = medium.polymorphismMethod();
         JSONObject responseJson = new JSONObject();
@@ -55,7 +62,7 @@ public class MyHandler implements HttpHandler {
         os.close();
 
     }
-    private void handleSecondEndpoint(HttpExchange exchange) throws IOException {
+    public void handleSecondEndpoint(HttpExchange exchange) throws IOException {
 
 
 
