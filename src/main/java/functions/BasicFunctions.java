@@ -82,6 +82,19 @@ public class BasicFunctions implements BasicInterface {
       return arr;
     }
 
+    @Override
+    public int[] changeStringForIntArray(String word) {
+        String onlyNumbers = word.replaceAll("[^0-9]", "");
+
+        int[] wordArray = new int[onlyNumbers.length()];
+
+        for(int i = 0; i < onlyNumbers.length(); i++){
+            wordArray[i] = Integer.parseInt(String.valueOf(onlyNumbers.charAt(i)));
+        }
+
+        return wordArray;
+    }
+
 
     public BasicFunctions(int[] myArr) {
         this.myArr = myArr;

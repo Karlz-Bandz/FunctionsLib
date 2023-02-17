@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="BasicFunctionsTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2023-02-17T08:12:15" hostname="WPLKM250542-F0V" time="0.03">
+  <properties/>
+  <testcase name="changeStringForIntArrayTest()" classname="BasicFunctionsTest" time="0.027"/>
+  <testcase name="findTheSecondLargestTest()" classname="BasicFunctionsTest" time="0.002"/>
+  <system-out><![CDATA[2
+3
+4
+3
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

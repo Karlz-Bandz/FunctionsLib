@@ -18,15 +18,15 @@ public class   Main {
 
         HttpServer server = HttpServer.create(new InetSocketAddress(8080), 0);
 
-        HttpHandler endpoint1 = new MyHandler();
-        HttpHandler endpoint2 = new MyHandler();
-        HttpHandler endpoint3 = new MyHandler();
-        HttpHandler endpoint4 = new MyHandler();
+        HttpHandler endpoints = new MyHandler();
 
-        server.createContext("/api/1", endpoint1);
-        server.createContext("/api/2", endpoint2);
-        server.createContext("/api/quicksort", endpoint3);
-        server.createContext("/api/show/students", endpoint4);
+
+
+        server.createContext("/api/1", endpoints);
+        server.createContext("/api/2", endpoints);
+        server.createContext("/api/quicksort", endpoints);
+        server.createContext("/api/show/students", endpoints);
+        server.createContext("/api/post/sort", endpoints);
 
 
 

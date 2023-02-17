@@ -16,4 +16,6 @@ public interface MyHandlerInterface {
     void handleQuickSort(HttpExchange exchange) throws IOException;
     //Display List of students
     void diplayListOfStudents(HttpExchange exchange) throws IOException;
+    //Post string and return it as a sorted array
+    void postAndSort(HttpExchange exchange) throws IOException;
 }

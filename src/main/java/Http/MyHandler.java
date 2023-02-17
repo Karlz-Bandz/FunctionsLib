@@ -12,8 +12,7 @@ import models.Student;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
-import java.io.IOException;
-import java.io.OutputStream;
+import java.io.*;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.List;
@@ -47,6 +46,9 @@ public class MyHandler implements HttpHandler, MyHandlerInterface {
                 break;
             case "/api/show/students":
                 diplayListOfStudents(exchange);
+                break;
+            case "/api/post/sort":
+                postAndSort(exchange);
                 break;
             default:
                 exchange.sendResponseHeaders(404, -1);
@@ -145,6 +147,43 @@ public class MyHandler implements HttpHandler, MyHandlerInterface {
         OutputStream outputStream = exchange.getResponseBody();
         outputStream.write(json.getBytes());
         outputStream.close();
+    }
+
+    @Override
+    public void postAndSort(HttpExchange exchange) throws IOException {
+
+        if("POST".equals(exchange.getRequestMethod())){
+            InputStream inputStream = exchange.getRequestBody();
+            BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream));
+            StringBuilder inputStringBuilder = new StringBuilder();
+            String line = bufferedReader.readLine();
+
+            while(line != null){
+                inputStringBuilder.append(line);
+                line = bufferedReader.readLine();
+            }
+
+            String inputString = inputStringBuilder.toString();
+            int[] notSortedArray = hardFunctions.changeStringForIntArray(inputString);
+            int[] sortedArray = hardFunctions.quickSort(notSortedArray);
+
+
+            JSONArray jsonArray = new JSONArray(sortedArray);
+            JSONObject jsonObject = new JSONObject();
+            jsonObject.put("sortedNumbers", jsonArray);
+
+            exchange.getResponseHeaders().set("Content-Type", "application/json");
+            exchange.sendResponseHeaders(200, jsonObject.toString().length());
+
+            OutputStream outputStream = exchange.getResponseBody();
+            outputStream.write(jsonObject.toString().getBytes());
+            outputStream.close();
+
+
+
+
+        }
+
     }
 }
 
