@@ -14,5 +14,7 @@ public interface BasicInterface {
 
      int[] basicSort(int[] arr);
 
+     int[] changeStringForIntArray(String word);
+
      float squarePlace(float a);
 }
